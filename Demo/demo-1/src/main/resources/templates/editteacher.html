@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<form action="#" th:action="@{/editteacher}" th:object="${teacher}"
+			method="post">
+    <h3>Edit </h3>
+    <table>
+    		<tr>
+					<td>Id</td>
+					<td><input type="text" th:field="*{id}" readonly="readonly" /></td>
+				</tr>
+	 <tr>
+	     <td>First Name:</td>  
+	     <td><input type="text"  th:field="*{firstname}" required /></td>
+	  </tr>
+	   <tr>
+	     <td>Last Name:</td>  
+	     <td><input type="text"  th:field="*{lastname}" required /></td>
+	  </tr>
+	   <tr>
+	     <td> DOB:</td>  
+	     <td><input type="date"  th:field="*{dob}" required /></td>
+	  </tr>
+	   <tr>
+	     <td>Gender:</td>  
+	     <td><input type="radio" id="male"  th:field="*{gender}" value="male">Male<input type="radio" id="female"  th:field="*{gender}" value="female">Female
+			</td>
+	  </tr>
+	   <tr>
+	     <td>Contact No:</td>  
+	     <td><input type="number"  th:field="*{contactno}" required /></td>
+	  </tr>
+	   <tr>
+	     <td>Email:</td>  
+	     <td><input type="email"  th:field="*{email}" required /></td>
+	  </tr>
+	   <tr>
+	     <td>User ID:</td>  
+	     <td><input type="text"  th:field="*{userid}" required /></td>
+	  </tr>
+	 <tr>
+	 <td>Password:</td>
+	 <td><input type="password"  th:field="*{password}" required /></td>
+	 </tr>
+	  <tr>
+	 <td>Subject:</td>
+	 <td><input type="text"  th:field="*{subject}" required readonly="readonly" /></td>
+	 </tr>
+	 
+	</table>
+	<input type="submit" value="Edit" />
+
+	</form>
+</body>
+</html>

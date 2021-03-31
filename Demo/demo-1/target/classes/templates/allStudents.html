@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<htmlxmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+<div align="center">
+		<h2>All Students</h2>   
+		<a href="admin">Go Back</a><br>
+		<br>
+		<table border="1">
+			<thead>
+				<tr>
+					<th>Id</th>
+					<th>FirstName</th>
+					<th>LastName</th>
+					<th>DOB</th>
+					<th>Gender</th>
+						<th>ContactNo</th>
+							<th>Email</th>
+								<th>UserID</th>
+					<th>Password</th>
+					<th>Action</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr th:each="student:${liststudent}">
+					<td th:text="${student.id}" />
+					<td th:text="${student.firstname}"/>
+					<td th:text="${student.lastname}" />
+					<td th:text="${student.dob}" />
+					<td th:text="${student.gender}" />
+					<td th:text="${student.contactno}" />
+					<td th:text="${student.email}" />
+					<td th:text="${student.userid}" />
+					<td th:text="${student.password}" />
+					<td><a th:href="@{'/edit/'+ ${student.id}}" >Edit</a> 
+						&nbsp;&nbsp;&nbsp;
+						<a th:href="@{'/delete/'+ ${student.id}}" >Delete</a>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+
+
+	</div>
+
+</body>
+</html>
